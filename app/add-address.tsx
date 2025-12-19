@@ -188,6 +188,7 @@ const styles = StyleSheet.create({
   },
   menuButton: {
     width: 0,
+    opacity: 0,
     alignItems: 'flex-end',
   },
   content: {
