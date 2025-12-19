@@ -159,10 +159,11 @@ export default function ProductItemDemo() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: Colors.backgrounds.normal,
+    backgroundColor: Colors.background.cream[100],
   },
   container: {
     flex: 1,
+    backgroundColor: Colors.background.cream[100],
   },
   content: {
     padding: 16,
