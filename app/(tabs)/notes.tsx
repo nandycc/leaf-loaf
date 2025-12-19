@@ -135,6 +135,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.backgrounds.normal,
     paddingTop: 62,
     paddingBottom: 62,
+    paddingHorizontal: 24,
   },
   scrollView: {
     flex: 1,
