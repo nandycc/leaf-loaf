@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   noteCard: {
-    width: 102,
+
     height: 93,
     backgroundColor: Colors.background.cream[100],
     borderRadius: 8,
