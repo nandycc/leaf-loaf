@@ -4,13 +4,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Colors, Typography } from '@/constants/theme';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/lib/supabase';
-import { MapPin, ArrowRight, Package } from 'lucide-react-native';
+import { MapPin, ArrowRight } from 'lucide-react-native';
 import type { UserAddress } from '@/types/database';
-import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
   const { user } = useAuth();
-  const router = useRouter();
   const [address, setAddress] = useState<UserAddress | null>(null);
 
   useEffect(() => {
@@ -72,15 +70,6 @@ export default function HomeScreen() {
         <Text style={styles.welcomeMessage}>
           Hi {user?.user_metadata?.name || 'there'}, How can I assist with your groceries today?
         </Text>
-
-        <TouchableOpacity
-          style={styles.demoButton}
-          onPress={() => router.push('/product-item-demo')}
-        >
-          <Package size={20} color={Colors.accent.orange[200]} />
-          <Text style={styles.demoButtonText}>View ProductItem Demo</Text>
-          <ArrowRight size={20} color={Colors.accent.orange[200]} />
-        </TouchableOpacity>
 
         <LinearGradient
           colors={Colors.backgrounds.gradient}
@@ -216,24 +205,6 @@ const styles = StyleSheet.create({
     color: Colors.fonts.heading,
     marginTop: 10,
     marginBottom: 20,
-  },
-  demoButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: Colors.background.cream[100],
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 20,
-    gap: 8,
-    borderWidth: 1,
-    borderColor: Colors.accent.orange[200],
-  },
-  demoButtonText: {
-    ...Typography.b1,
-    color: Colors.accent.orange[200],
-    flex: 1,
-    textAlign: 'center',
   },
   quickActionsContainer: {
     borderRadius: 16,
