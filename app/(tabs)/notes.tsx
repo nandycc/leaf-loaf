@@ -161,7 +161,6 @@ const styles = StyleSheet.create({
   },
   ongoingSection: {
     backgroundColor: Colors.background.cream[100],
-    marginHorizontal: 16,
     borderRadius: 8,
     padding: 16,
     marginBottom: 24,
