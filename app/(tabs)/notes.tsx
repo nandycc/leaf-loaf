@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.backgrounds.normal,
-    paddingTop: 62,
+    paddingTop: 52,
     paddingBottom: 62,
     paddingHorizontal: 24,
   },
@@ -206,8 +206,6 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   notesSection: {
-    paddingHorizontal: 16,
-    
     marginBottom: 100,
   },
   notesSectionHeader: {
