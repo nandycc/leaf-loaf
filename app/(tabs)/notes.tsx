@@ -116,7 +116,7 @@ export default function OrdersScreen() {
                       {note.name}
                     </Text>
                     <TouchableOpacity style={styles.noteIconButton}>
-                      <ArrowRight size={16} color={Colors.neutrals[100]} />
+                      <ArrowRight size={8} color={Colors.neutrals[100]} />
                     </TouchableOpacity>
                   </View>
                 </View>
