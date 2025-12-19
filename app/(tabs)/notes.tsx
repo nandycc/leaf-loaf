@@ -251,8 +251,8 @@ const styles = StyleSheet.create({
   },
   noteIconButton: {
     backgroundColor: Colors.text.brown[300],
-    width: 24,
-    height: 24,
+    width: 12,
+    height: 12,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
