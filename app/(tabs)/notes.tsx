@@ -185,6 +185,7 @@ const styles = StyleSheet.create({
   },
   notesSection: {
     paddingHorizontal: 16,
+    height: 93,
     marginBottom: 100,
   },
   notesSectionHeader: {
