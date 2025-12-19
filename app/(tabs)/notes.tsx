@@ -20,7 +20,7 @@ export default function OrdersScreen() {
   const [notes, setNotes] = useState<Note[]>([]);
 
   const CARD_MIN_WIDTH = 102;
-  const PADDING = 16 * 2;
+  const PADDING = 24 * 2;
   const GAP = 10;
 
   const calculateColumns = () => {
@@ -116,7 +116,7 @@ export default function OrdersScreen() {
                       {note.name}
                     </Text>
                     <TouchableOpacity style={styles.noteIconButton}>
-                      <ArrowRight size={8} color={Colors.neutrals[100]} />
+                      <ArrowRight size={14} color={Colors.neutrals[100]} />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -250,10 +250,11 @@ const styles = StyleSheet.create({
   },
   noteIconButton: {
     backgroundColor: Colors.text.brown[300],
-    width: 12,
-    height: 12,
-    borderRadius: 30,
+    width: 24,
+    height: 24,
+    borderRadius: 4,
     alignItems: 'center',
     justifyContent: 'center',
+    flexShrink: 0,
   },
 });
