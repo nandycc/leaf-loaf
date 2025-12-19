@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   navbarTitle: {
-    ...Typography.b4,
+    ...Typography.b1,
 
   },
   navbarSpacer: {
