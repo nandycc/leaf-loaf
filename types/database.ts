@@ -18,3 +18,13 @@ export type UserAddress = {
   created_at: string;
   updated_at: string;
 };
+
+export type Note = {
+  id: string;
+  user_id: string;
+  name: string;
+  lists: string[];
+  color: 'brown-300' | 'blue-200' | 'orange-300' | 'green-300';
+  created_at: string;
+  updated_at: string;
+};
