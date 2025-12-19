@@ -123,15 +123,15 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   navbarTitle: {
-    ...Typography.h4,
-    color: Colors.neutrals[100],
+    ...Typography.b4,
+
   },
   navbarSpacer: {
     flex: 1,
   },
   editButton: {
-    width: 40,
-    height: 40,
+    width: 24,
+    height: 24,
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderRadius: 8,
     alignItems: 'center',
