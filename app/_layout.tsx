@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useFrameworkReady } from '@/hooks/useFrameworkReady';
+import { useAuthRedirect } from '@/hooks/useAuthRedirect';
 import { useFonts } from 'expo-font';
 import {
   Poppins_400Regular,
@@ -11,6 +12,26 @@ import * as SplashScreen from 'expo-splash-screen';
 import { AuthProvider } from '@/contexts/AuthContext';
 
 SplashScreen.preventAutoHideAsync();
+
+function RootNavigator() {
+  useAuthRedirect();
+
+  return (
+    <>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="signup" />
+        <Stack.Screen name="signin" />
+        <Stack.Screen name="signup-email" />
+        <Stack.Screen name="pincode-check" />
+        <Stack.Screen name="add-address" />
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+      <StatusBar style="auto" />
+    </>
+  );
+}
 
 export default function RootLayout() {
   useFrameworkReady();
@@ -32,17 +53,7 @@ export default function RootLayout() {
 
   return (
     <AuthProvider>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="signup" />
-        <Stack.Screen name="signin" />
-        <Stack.Screen name="signup-email" />
-        <Stack.Screen name="pincode-check" />
-        <Stack.Screen name="add-address" />
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
+      <RootNavigator />
     </AuthProvider>
   );
 }
