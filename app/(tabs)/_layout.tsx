@@ -8,13 +8,13 @@ import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const icons = {
     index: Home,
-    orders: StickyNote,
+    notes: StickyNote,
     profile: User,
   };
 
   const labels = {
     index: 'Home',
-    orders: 'Notes',
+    notes: 'Notes',
     profile: 'Profile',
   };
 
@@ -90,7 +90,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="orders"
+        name="notes"
         options={{
           title: 'Notes',
         }}
