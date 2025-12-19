@@ -42,7 +42,7 @@ export default function OrdersScreen() {
           <Text style={styles.navbarTitle}>Notepad</Text>
           <View style={styles.navbarSpacer} />
           <TouchableOpacity style={styles.editButton}>
-            <Edit3 size={20} color={Colors.neutrals[100]} />
+            <SquarePen size={20} color={Colors.neutrals[100]} />
           </TouchableOpacity>
         </TopNavbar>
 
