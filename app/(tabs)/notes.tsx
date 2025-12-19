@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
   },
   notesSection: {
     paddingHorizontal: 16,
-    height: 93,
+    
     marginBottom: 100,
   },
   notesSectionHeader: {
@@ -204,7 +204,8 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   noteCard: {
-    width: '48%',
+    width: 102,
+    height: 93,
     backgroundColor: Colors.background.cream[100],
     borderRadius: 8,
     overflow: 'hidden',
