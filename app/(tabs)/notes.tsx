@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, useWindowDimensions } from 'react-native';
 import { Colors, Typography } from '@/constants/theme';
 import { TopNavbar } from '@/components/TopNavbar';
-import { SquarePen, MoreVertical, FileText } from 'lucide-react-native';
+import { SquarePen, MoreVertical, ChevronRight } from 'lucide-react-native';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/lib/supabase';
 import type { Note } from '@/types/database';
@@ -16,7 +16,24 @@ const colorMap = {
 
 export default function OrdersScreen() {
   const { user } = useAuth();
+  const { width: screenWidth } = useWindowDimensions();
   const [notes, setNotes] = useState<Note[]>([]);
+
+  const CARD_MIN_WIDTH = 102;
+  const PADDING = 16 * 2;
+  const GAP = 10;
+
+  const calculateColumns = () => {
+    const availableWidth = screenWidth - PADDING;
+    const threeColWidth = (availableWidth - GAP * 2) / 3;
+    return threeColWidth >= CARD_MIN_WIDTH ? 3 : 2;
+  };
+
+  const calculateCardWidth = () => {
+    const availableWidth = screenWidth - PADDING;
+    const columns = calculateColumns();
+    return (availableWidth - GAP * (columns - 1)) / columns;
+  };
 
   useEffect(() => {
     if (user) {
@@ -90,15 +107,18 @@ export default function OrdersScreen() {
 
           <View style={styles.notesGrid}>
             {notes.map((note) => (
-              <View key={note.id} style={styles.noteCard}>
+              <View key={note.id} style={[styles.noteCard, { width: calculateCardWidth() }]}>
                 <View style={[styles.noteCardTop, { backgroundColor: colorMap[note.color] }]} />
                 <View style={styles.noteCardContent}>
-                  <Text style={styles.noteCardTitle} numberOfLines={2}>
-                    {note.name}
-                  </Text>
-                  <TouchableOpacity style={styles.noteIconButton}>
-                    <FileText size={16} color={Colors.text.brown[300]} />
-                  </TouchableOpacity>
+                  <View />
+                  <View style={styles.noteCardBottom}>
+                    <Text style={styles.noteCardTitle} numberOfLines={2}>
+                      {note.name}
+                    </Text>
+                    <TouchableOpacity style={styles.noteIconButton}>
+                      <ChevronRight size={16} color={Colors.neutrals[100]} />
+                    </TouchableOpacity>
+                  </View>
                 </View>
               </View>
             ))}
@@ -204,7 +224,6 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   noteCard: {
-    width: 102,
     height: 93,
     backgroundColor: Colors.background.cream[100],
     borderRadius: 8,
@@ -216,17 +235,25 @@ const styles = StyleSheet.create({
   noteCardContent: {
     padding: 12,
     minHeight: 80,
+    flexDirection: 'column',
     justifyContent: 'space-between',
+  },
+  noteCardBottom: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+    gap: 8,
   },
   noteCardTitle: {
     ...Typography.l2Medium,
     color: Colors.fonts.heading,
-    marginBottom: 8,
+    flex: 1,
   },
   noteIconButton: {
-    alignSelf: 'flex-end',
+    backgroundColor: Colors.text.brown[300],
     width: 24,
     height: 24,
+    borderRadius: 4,
     alignItems: 'center',
     justifyContent: 'center',
   },
