@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.neutrals[100],
     borderRadius: 4,
     padding: 12,
-    marginBottom: 12,
+    marginBottom: 8,
   },
   listImage: {
     width: 48,
