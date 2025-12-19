@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   noteCardTitle: {
-    ...Typography.l2,
+    ...Typography.l2Medium,
     color: Colors.fonts.heading,
     marginBottom: 8,
   },
