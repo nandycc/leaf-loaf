@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   navbar: {
-    marginHorizontal: 16,
+
     marginBottom: 24,
   },
   navbarTitle: {
