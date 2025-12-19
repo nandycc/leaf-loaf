@@ -212,4 +212,19 @@ export const Typography = {
     fontSize: 6,
     lineHeight: 9,
   },
+  l1Medium: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: 10,
+    lineHeight: 14,
+  },
+  l2Medium: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: 8,
+    lineHeight: 11,
+  },
+  l3Medium: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: 6,
+    lineHeight: 9,
+  },
 };
