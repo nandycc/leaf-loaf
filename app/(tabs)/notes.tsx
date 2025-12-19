@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { Colors, Typography } from '@/constants/theme';
 import { TopNavbar } from '@/components/TopNavbar';
-import { Edit3, MoreVertical, FileText } from 'lucide-react-native';
+import { SquarePen, MoreVertical, FileText } from 'lucide-react-native';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/lib/supabase';
 import type { Note } from '@/types/database';
