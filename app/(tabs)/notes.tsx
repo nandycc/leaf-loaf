@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
   },
   notesGrid: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexWrap: 'fill',
     gap: 10,
   },
   noteCard: {
