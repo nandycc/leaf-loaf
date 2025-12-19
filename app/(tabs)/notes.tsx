@@ -201,15 +201,14 @@ const styles = StyleSheet.create({
   notesGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 12,
+    gap: 10,
   },
   noteCard: {
-
+    width: 102,
     height: 93,
     backgroundColor: Colors.background.cream[100],
     borderRadius: 8,
     overflow: 'hidden',
-    marginBottom: 12,
   },
   noteCardTop: {
     height: 8,
