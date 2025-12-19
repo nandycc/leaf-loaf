@@ -143,6 +143,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 16,
     marginBottom: 24,
+    gap: 8,
   },
   sectionTitle: {
     ...Typography.h5,
