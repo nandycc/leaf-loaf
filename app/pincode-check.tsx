@@ -6,10 +6,12 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
 import { ProgressDots } from '@/components/ProgressDots';
 import { supabase } from '@/lib/supabase';
+import { useAuth } from '@/contexts/AuthContext';
 import { ChevronLeft, MoreHorizontal } from 'lucide-react-native';
 
 export default function PincodeCheckScreen() {
   const router = useRouter();
+  const { signOut } = useAuth();
   const [pincode, setPincode] = useState('');
   const [loading, setLoading] = useState(false);
   const [showUnavailableModal, setShowUnavailableModal] = useState(false);
@@ -45,6 +47,11 @@ export default function PincodeCheckScreen() {
   const handleTryAnotherPincode = () => {
     setShowUnavailableModal(false);
     setPincode('');
+  };
+
+  const handleGoToSignup = async () => {
+    await signOut();
+    router.replace('/signup');
   };
 
   return (
@@ -94,6 +101,9 @@ export default function PincodeCheckScreen() {
             loading={loading}
             disabled={!pincode}
           />
+          <TouchableOpacity onPress={handleGoToSignup} style={styles.debugButton}>
+            <Text style={styles.debugButtonText}>Go to signup page</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
 
@@ -236,5 +246,15 @@ const styles = StyleSheet.create({
   exitButtonText: {
     ...Typography.b1,
     color: Colors.fonts.heading,
+  },
+  debugButton: {
+    paddingVertical: 12,
+    alignItems: 'center',
+    marginTop: 12,
+  },
+  debugButtonText: {
+    ...Typography.b2,
+    color: Colors.fonts.body,
+    textDecorationLine: 'underline',
   },
 });
