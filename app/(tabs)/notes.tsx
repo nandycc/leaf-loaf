@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   sectionTitle: {
-    ...Typography.h5,
+    ...Typography.b1,
     color: Colors.fonts.heading,
 
   },
