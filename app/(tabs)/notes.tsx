@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     ...Typography.h5,
     color: Colors.fonts.heading,
-    marginBottom: 16,
+
   },
   listItem: {
     flexDirection: 'row',
