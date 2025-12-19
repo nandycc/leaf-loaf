@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, useWindowDimensions } from 'react-native';
 import { Colors, Typography } from '@/constants/theme';
 import { TopNavbar } from '@/components/TopNavbar';
-import { SquarePen, MoreVertical, ChevronRight } from 'lucide-react-native';
+import { SquarePen, MoreVertical, ArrowRight } from 'lucide-react-native';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/lib/supabase';
 import type { Note } from '@/types/database';
@@ -116,7 +116,7 @@ export default function OrdersScreen() {
                       {note.name}
                     </Text>
                     <TouchableOpacity style={styles.noteIconButton}>
-                      <ChevronRight size={16} color={Colors.neutrals[100]} />
+                      <ArrowRight size={16} color={Colors.neutrals[100]} />
                     </TouchableOpacity>
                   </View>
                 </View>
