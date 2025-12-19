@@ -6,7 +6,7 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
 import { ProgressDots } from '@/components/ProgressDots';
 import { supabase } from '@/lib/supabase';
-import { ChevronLeft, MoreHorizontal } from 'lucide-react-native';
+import { ChevronLeft } from 'lucide-react-native';
 
 export default function PincodeCheckScreen() {
   const router = useRouter();
@@ -64,10 +64,6 @@ export default function PincodeCheckScreen() {
           </TouchableOpacity>
 
           <ProgressDots total={3} current={2} />
-
-          <View style={styles.menuButton}>
-            <MoreHorizontal size={20} color={Colors.fonts.heading} />
-          </View>
         </View>
 
         <View style={styles.content}>
@@ -169,10 +165,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.components.activeInput,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  menuButton: {
-    width: 0,
-    alignItems: 'flex-end',
   },
   content: {
     flex: 1,
